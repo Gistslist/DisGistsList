@@ -1,0 +1,36 @@
+<?php
+
+
+
+echo $dbc->getAttribute(PDO::ATTR_CONNECTION_STATUS) . "\n";
+$truncstmt=$dbc->prepare('TRUNCATE ad_list');
+$truncstmt->execute();
+$parks = [
+    ['item_name'=> 'grappling gun', 
+    'price'=> '56857', 
+    'description'=>'One of Batman\'s most basic gadgets 
+    is his grappling gun, which allows him to repel down
+     buildings with the greatest of ease or sky rocket himself 
+     to the top with the simple pull of a trigger.', 
+    'used_against'=>'tall building',
+    'condition'=>'decent',
+    'generation'=>'all',
+    'sell_by'=> '2016-12-31'];
+    
+
+$stmt = $dbc->prepare('INSERT INTO musicians(item_name, price, description, used_against, condition, generation, sell_by)
+                        VALUES (:item_name, :price, :description, :used_against, :condition, :generation, :sell_by)');
+
+foreach ($parks as $park){
+    $stmt->bindValue(':item_name', $park['item_name'], PDO::PARAM_STR);
+    $stmt->bindValue(':price', $park['price'], PDO::PARAM_STR);
+    $stmt->bindValue(':description', $park['description'], PDO::PARAM_STR);
+    $stmt->bindValue(':used_against', $park['used_against'], PDO::PARAM_STR);
+    $stmt->bindValue(':condition', $park['condition'], PDO::PARAM_STR);
+    $stmt->bindValue(':generation', $park['generation'], PDO::PARAM_STR);
+    $stmt->bindValue(':sell_by', $park['sell_by'], PDO::PARAM_STR);
+    
+    $stmt->execute();
+    
+    echo "Inserted ID: " . $dbc->lastInsertId() . PHP_EOL;
+}

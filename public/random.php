@@ -101,7 +101,7 @@ if(Input::has('item_name') && Input::has('price') && Input::has('description')
             <td><?= $item['used_against']; ?></td>
             <td><?= $item['bat_condition']; ?></td>
             <td><?= $item['generation']; ?></td>
-            <td><?= $item['image']; ?></td>
+            <td><img src="<?= $item['image']; ?>"></td>
           </tr>
       <? endforeach;?>
     </table> 
