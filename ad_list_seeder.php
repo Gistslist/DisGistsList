@@ -16,7 +16,7 @@ $items = [
     'used_against'=>'tall buildings',
     'bat_condition'=>'decent',
     'generation'=>'all',
-    'image'=>'grappling-gun.jpg'],
+    'image'=>'img/grappling-gun.jpg'],
     ['item_name'=>'batarang',
     'price'=>'3462',
     'description'=>'Another one of the more simple -- 
@@ -29,7 +29,7 @@ $items = [
      'used_against'=>'enemies',
      'bat_condition'=>'excellent',
      'generation'=>'4th',
-     'image'=>'batarang.jpg'],
+     'image'=>'img/batarang.jpg'],
      ['item_name'=>'bat_signal',
      'price'=>'735',
      'description'=>'Perhaps the most crucial element 
@@ -42,7 +42,7 @@ $items = [
      'used_against'=>'enemies',
      'bat_condition'=>'excellent',
      'generation'=>'2nd',
-     'image'=>'bat-signal.jpg']
+     'image'=>'img/bat-signal.jpg']
 ];
     
 
