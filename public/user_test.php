@@ -51,7 +51,7 @@ if(Input::has('user_name') && Input::has('password') && Input::has('email') ){
     $stmt->bindValue(':user_name', $user_name, PDO::PARAM_STR);
     $stmt->bindValue(':password', $password, PDO::PARAM_STR);
     $stmt->bindValue(':email', $formatDate, PDO::PARAM_STR);
-   
+    $stmt->execute();
       
       
     
