@@ -1,5 +1,5 @@
 <?php
-require_once "Log.php";
+require_once "Logger.php";
 require_once "Input.php";
 
 class Auth
@@ -17,7 +17,7 @@ class Auth
 				return true;
 			} else {
 				$_SESSION['loginmessage'] = "Login Failed! Please try again";
-				$newlog->error($username . ' failed to log in');
+				$newlog->logerror($username . ' failed to log in');
 				return false;
 			}
 		}

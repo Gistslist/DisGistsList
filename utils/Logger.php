@@ -1,10 +1,14 @@
 <?php
+
+class Log {
+
 function logMessage($logLevel, $message)
 {
     $fileNameDate = date("Y-m-d", time());
     $filename = 'log-' . $fileNameDate . '.log';
     $handle = fopen($filename, 'a');
   	$date = date("Y-m-d H-i-s", time());
+    $message = "what the?";
 
   	fwrite($handle, $date . " " . $logLevel . ", " . $message . PHP_EOL);
     fclose($handle);
@@ -14,10 +18,10 @@ function logInfo($message)
 {
 	return logMessage("INFO", $message);
 }
-logInfo("Adlister");
 
-function logError()
+
+function logError($message)
 {
-	return logMessage("ERROR", $message);
+	//logMessage("ERROR", $message);
 }
-logError("Nah Mister.");
+}
