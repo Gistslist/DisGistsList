@@ -33,18 +33,25 @@ $stmt->execute();
 
 $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-if(Input::has('item_name') && Input::has('price') && Input::has('description') 
-   && Input::has('used_against') && Input::has('bat_condition') && Input::has('generation') && Input::has('image')){
+if(Input::has('item_name')){
+    if($_FILES) {
+        $uploads_directory = 'img/uploads/';
+        $filename = $uploads_directory . basename($_FILES['image']['name']);
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $filename)) {
+            echo '<p>The file '. basename( $_FILES['image']['name']). ' has been uploaded.</p>';
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
   
     $item_name = Input::getString('item_name');
-    $price = Input::getString('price');
+    $price = Input::get('price');
     $description = Input::get('description');
-    $used_against = Input::getNumber('used_against');
+    $used_against = Input::getString('used_against');
     $bat_condition = Input::getString('bat_condition');
     $generation = Input::getString('generation');
-    $image = Input::getString('image');
+    
 
-    $formatDate =date("Y-m-d", strtotime($description));
+   
 
     $insertQuery = "INSERT INTO ad_list (item_name, price, description, used_against, bat_condition, generation, image)
             VALUES (:item_name, :price, :description, :used_against, :bat_condition, :generation, :image)";
@@ -54,11 +61,11 @@ if(Input::has('item_name') && Input::has('price') && Input::has('description')
 
     $stmt->bindValue(':item_name', $item_name, PDO::PARAM_STR);
     $stmt->bindValue(':price', $price, PDO::PARAM_STR);
-    $stmt->bindValue(':description', $formatDate, PDO::PARAM_STR);
+    $stmt->bindValue(':description', $description, PDO::PARAM_STR);
     $stmt->bindValue(':used_against', $used_against, PDO::PARAM_STR);
     $stmt->bindValue(':bat_condition', $bat_condition, PDO::PARAM_STR);
     $stmt->bindValue(':generation', $generation, PDO::PARAM_STR);
-    $stmt->bindValue(':image', $image, PDO::PARAM_STR);      
+    $stmt->bindValue(':image', $filename, PDO::PARAM_STR);      
     $stmt->execute();
       
       
@@ -70,6 +77,8 @@ if(Input::has('item_name') && Input::has('price') && Input::has('description')
 }else{
     $errorMessage = "Please fill out all fields to add an item.";
     $exceptionError = "input item_name";
+}
+
 }
 ?>
 <!DOCTYPE html>
@@ -115,7 +124,7 @@ if(Input::has('item_name') && Input::has('price') && Input::has('description')
       <? endif ?>
   </div>
   <div class='container'>
-      <form method="POST" action="upload.php" enctype="multipart/form-data">
+      <form method="POST" action="random.php" enctype="multipart/form-data">
               <fieldset>
                   <legend><?= $errorMessage;?></legend>
 
@@ -136,11 +145,11 @@ if(Input::has('item_name') && Input::has('price') && Input::has('description')
 
                   
                   <label for="image"></label>
-                  <input type="file" name="somefile" placeholder="insert image">
+                  <input type="file" name="image" placeholder="insert image">
 
                   <label for="description"></label>
                   <textarea    type="text" id="description" name="description" placeholder="description" rows="5" cols="40"
-                  autofocus>
+                  autofocus></textarea>
                     
                   <input method="POST" type="submit" value="Submit">
                   
