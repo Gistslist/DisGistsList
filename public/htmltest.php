@@ -5,22 +5,22 @@ require_once "ad.show.php";
 ?>
 <html>
 <head>
-	<title>Batlist</title>
+    <title>Batlist</title>
 
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Stylesheets -->
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
     <!-- bxSlider CSS file -->
     <link rel="stylesheet" href="/css/jquery.bxslider.css">
     <link rel="stylesheet" type="text/css" href="/css/grayscale.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
 
-	<!-- Custom Fonts -->
+    <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -34,7 +34,7 @@ require_once "ad.show.php";
 
 <bodyid="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
@@ -56,16 +56,16 @@ require_once "ad.show.php";
                         <a class="page-scroll" href="#browse">Browse</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#login">Log In</a>
+                        <a class="page-scroll" href="#search">Search</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#search">Search</a>
+                        <a class="page-scroll" href="#post_ad">List your Bat Ad</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#signup">Sign Up</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">List your Bat Ad</a>
+                        <a class="page-scroll" href="#login">Log In</a>
                     </li>
                 </ul>
             </div>
@@ -92,20 +92,28 @@ require_once "ad.show.php";
     
 
     <section id="browse" class="container content-section">
-    	<div class="container">
+        <div class="container">
             <ul class="bxslider">
             <?php foreach ($items as $item): ?>
-                <li><img src="<?= $item['image'] ?>" /></li>
+                <li><img src="/img/<?= $item['image'] ?>" title="<?= $item['item_name'] ?>" id="<?= $item['id'] ?>" /></li>
             <? endforeach ?>
             </ul>
         </div>
     </section>
 
-	<section>portfolio</section>
-	<section>experience</section>
-	<section>thoughts</section>
+    <section id="post_ad" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Sell your Bat Gadgets!</h2>
+                <p>Feel free to contact me or follow my work!</p>
+            </div>
+        </div>
+    </section>
 
-	<section id="contact" class="container content-section text-center">
+    <section>experience</section>
+    <section>thoughts</section>
+
+    <section id="about" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Contact Me</h2>
@@ -124,7 +132,7 @@ require_once "ad.show.php";
         </div>
     </section>
 
-	<footer>
+    <footer>
         <div class="container text-center">
             <p>Copyright &copy; Batlist 2015</p>
         </div>
