@@ -68,7 +68,7 @@ if(Input::has('item_name') && Input::has('price') && Input::has('description')
       
    
 }else{
-    $errorMessage = "Please fill out all fields to add a park.";
+    $errorMessage = "Please fill out all fields to add an item.";
     $exceptionError = "input item_name";
 }
 ?>
@@ -113,8 +113,43 @@ if(Input::has('item_name') && Input::has('price') && Input::has('description')
       <? if ($pageID < $numPages) : ?>
         <a style="float: right" href="?page=<?= ($pageID + 1) ?>">Next</a>
       <? endif ?>
-
   </div>
+  <div class='container'>
+      <form method="POST" action="upload.php" enctype="multipart/form-data">
+              <fieldset>
+                  <legend><?= $errorMessage;?></legend>
+
+                  <label for="item_name"></label>
+                  <input type="text" id="item_name" name="item_name" placeholder="item_name" autofocus><br>
+
+                  <label for="price"></label>
+                  <input type="number" id="price" name="price" placeholder="price"><br>
+
+                  <label for="used_against"></label>
+                  <input type="text" id="used_against" name="used_against" placeholder="used_against"><br>
+
+                  <label for="bat_condition"></label>
+                  <input  type="text" id="bat_condition" name="bat_condition" placeholder="bat_condition" autofocus><br>
+
+                  <label for="generation"></label>
+                  <input  type="text" id="generation" name="generation" placeholder="generation" autofocus><br>
+
+                  
+                  <label for="image"></label>
+                  <input type="file" name="somefile" placeholder="insert image">
+
+                  <label for="description"></label>
+                  <textarea    type="text" id="description" name="description" placeholder="description" rows="5" cols="40"
+                  autofocus>
+                    
+                  <input method="POST" type="submit" value="Submit">
+                  
+
+
+              </fieldset>
+          </form>
+        </div>
+
     
 </body>
 </html>
