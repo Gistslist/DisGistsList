@@ -56,16 +56,16 @@ require_once "ad.show.php";
                         <a class="page-scroll" href="#browse">Browse</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#login">Log In</a>
+                        <a class="page-scroll" href="#search">Search</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#search">Search</a>
+                        <a class="page-scroll" href="#post_ad">List your Bat Ad</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#signup">Sign Up</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">List your Bat Ad</a>
+                        <a class="page-scroll" href="#login">Log In</a>
                     </li>
                 </ul>
             </div>
@@ -95,17 +95,25 @@ require_once "ad.show.php";
         <div class="container">
             <ul class="bxslider">
             <?php foreach ($items as $item): ?>
-                <li><img src="<?= $item['image'] ?>" /></li>
+                <li><img src="/img/<?= $item['image'] ?>" title="<?= $item['item_name'] ?>" id="<?= $item['id'] ?>" /></li>
             <? endforeach ?>
             </ul>
         </div>
     </section>
 
-    <section>portfolio</section>
+    <section id="post_ad" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Sell your Bat Gadgets!</h2>
+                <p>Feel free to contact me or follow my work!</p>
+            </div>
+        </div>
+    </section>
+
     <section>experience</section>
     <section>thoughts</section>
 
-    <section id="contact" class="container content-section text-center">
+    <section id="about" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Contact Me</h2>
