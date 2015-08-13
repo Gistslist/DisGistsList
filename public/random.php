@@ -45,10 +45,10 @@ if(Input::has('item_name')){
   
     $item_name = Input::getString('item_name');
     $price = Input::get('price');
-    $description = Input::get('description');
     $used_against = Input::getString('used_against');
     $bat_condition = Input::getString('bat_condition');
-    $generation = Input::getString('generation');
+    $generation = Input::get('generation');
+    $description = Input::getString('description');
     
 
    
@@ -61,10 +61,10 @@ if(Input::has('item_name')){
 
     $stmt->bindValue(':item_name', $item_name, PDO::PARAM_STR);
     $stmt->bindValue(':price', $price, PDO::PARAM_STR);
-    $stmt->bindValue(':description', $description, PDO::PARAM_STR);
     $stmt->bindValue(':used_against', $used_against, PDO::PARAM_STR);
     $stmt->bindValue(':bat_condition', $bat_condition, PDO::PARAM_STR);
     $stmt->bindValue(':generation', $generation, PDO::PARAM_STR);
+    $stmt->bindValue(':description', $description, PDO::PARAM_STR);
     $stmt->bindValue(':image', $filename, PDO::PARAM_STR);      
     $stmt->execute();
       
@@ -85,7 +85,15 @@ if(Input::has('item_name')){
 <html>
 <head>
   <title>bat stuff</title>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -95,10 +103,10 @@ if(Input::has('item_name')){
         <tr>
           <th>item_name</th>
           <th>price</th>
-          <th>description</th>
           <th>used against</th>
           <th>bat condition</th>
           <th>generation</th>
+          <th>description</th>
           <th>image</th>
           </tr>
       
@@ -106,10 +114,10 @@ if(Input::has('item_name')){
           <tr>
             <td><?= $item['item_name']; ?></td>
             <td><?= $item['price']; ?></td>
-            <td><?= $item['description']; ?></td>
             <td><?= $item['used_against']; ?></td>
             <td><?= $item['bat_condition']; ?></td>
             <td><?= $item['generation']; ?></td>
+            <td><?= $item['description']; ?></td>
             <td><img src="<?= $item['image']; ?>"></td>
           </tr>
       <? endforeach;?>
@@ -124,41 +132,61 @@ if(Input::has('item_name')){
       <? endif ?>
   </div>
   <div class='container'>
-      <form method="POST" action="random.php" enctype="multipart/form-data">
+       <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Creat An Ad!
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Create Ad</h4>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="random.php" enctype="multipart/form-data">
               <fieldset>
-                  <legend><?= $errorMessage;?></legend>
-
+              <div class="adCreate form-group">
                   <label for="item_name"></label>
-                  <input type="text" id="item_name" name="item_name" placeholder="item_name" autofocus><br>
-
+                  <input type="text" name="item_name" class="form-control" id="item_name" placeholder="Item Name">
+              </div>
+              <div class="adCreate form-group">
                   <label for="price"></label>
-                  <input type="number" id="price" name="price" placeholder="price"><br>
-
+                  <input type="number" name="price" class="form-control" id="price" placeholder="Price">
+              </div>
+              <div class="adCreate form-group">
                   <label for="used_against"></label>
-                  <input type="text" id="used_against" name="used_against" placeholder="used_against"><br>
-
+                  <input type="text" name="used_against" class="form-control" id="used_against" placeholder="Used Against">
+              </div>
+              <div class="adCreate form-group">
                   <label for="bat_condition"></label>
-                  <input  type="text" id="bat_condition" name="bat_condition" placeholder="bat_condition" autofocus><br>
-
+                  <input type="text" name="bat_condition" class="form-control" id="bat_condition" placeholder="Condition">
+              </div>
+              <div class="adCreate form-group">
                   <label for="generation"></label>
-                  <input  type="text" id="generation" name="generation" placeholder="generation" autofocus><br>
-
-                  
-                  <label for="image"></label>
-                  <input type="file" name="image" placeholder="insert image">
-
-                  <label for="description"></label>
+                  <input type="text" name="generation" class="form-control" id="generation" placeholder="Generation">
+              </div>
+              <div class="adCreate form-group">
+                  <label for="image">File input</label>
+                  <input type="file" name="image" id="image">
+              </div>
+              <div>
+                <label for="description"></label>
                   <textarea    type="text" id="description" name="description" placeholder="description" rows="5" cols="40"
                   autofocus></textarea>
-                    
-                  <input method="POST" type="submit" value="Submit">
-                  
-
-
-              </fieldset>
+              </div>
+              <button type="submit" class="adCreate btn-submit btn-default">Submit</button>
           </form>
-        </div>
-
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
     
 </body>
 </html>
