@@ -28,10 +28,10 @@ require_once 'ad.show.php';
 </head>
 <body>
  	<ul class="bxslider">
- 		<?php foreach ($items as $item): ?>
-            <li><img src="<?= $item['image'] ?>" /></li>
-        <? endforeach ?>
-	</ul>
+            <?php foreach ($items as $item): ?>
+                <li><img src="/img/<?= $item['image'] ?>" title="<?= $item['item_name'] ?>" id="<?= $item['id'] ?>" /></li>
+            <? endforeach ?>
+            </ul>
     	
     
 </body>

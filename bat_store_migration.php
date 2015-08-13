@@ -1,4 +1,3 @@
-
 <?php
 require_once 'bat_config.php';
 require_once 'db_connect_copy.php';
@@ -13,20 +12,12 @@ $add = "CREATE TABLE ad_list (
   bat_condition VARCHAR(250) NOT NULL,
   generation VARCHAR(250) NOT NULL,
   image VARCHAR(250),
-  
-  PRIMARY KEY (id)
-);";
+  user_id INT unsigned NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (user_id) REFERENCES bat_user (user_id)
+)";
+
 $dbc->exec($add);
 
 
 
-$dbc->exec('DROP TABLE IF EXISTS `bat_user`');
-$add = "CREATE TABLE bat_user (
-  id INT unsigned AUTO_INCREMENT NOT NULL,
-  user_name VARCHAR(250) not NULL,
-  password  VARCHAR(250) NOT NULL,
-  email VARCHAR(250) NOT NULL,
-
-  PRIMARY key(id)
-  );";
-$dbc->exec($add);
