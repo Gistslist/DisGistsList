@@ -2,8 +2,8 @@
 require_once 'basemodel.php';
 class Ad extends baseModel
 	{
-		protected static $table = 'ads';
-		protected static $id    = 'ad_id';
+		protected static $table = 'ad_list';
+		protected static $id    = 'id';
 		public static function allByUser($user_id)
 		{
 			parent::dbConnect();
@@ -17,9 +17,9 @@ class Ad extends baseModel
 		public static function lastEntry($user_id)
 		{
 			parent::dbCOnnect();
-			$query = "SELECT ad_id FROM ads WHERE user_id = $user_id ORDER BY ad_id DESC LIMIT 1;";
+			$query = "SELECT * FROM ad_list WHERE user_id = $user_id ORDER BY id DESC LIMIT 1;";
 			$results = parent::$dbc->query($query)->fetch(PDO::FETCH_ASSOC);
-			$ad_id = (int)$results['ad_id'];
+			$ad_id = (int)$results['id'];
 			return $ad_id;
 		}
 	}
