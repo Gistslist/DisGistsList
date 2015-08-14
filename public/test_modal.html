@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <title></title>
+</head>
+<body>
+   <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Creat An Ad!
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Create Ad</h4>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="random.php" enctype="multipart/form-data">
+              <fieldset>
+              <div class="adCreate form-group">
+                  <label for="item_name"></label>
+                  <input type="text" name="item_name" class="form-control" id="item_name" placeholder="Item Name">
+              </div>
+              <div class="adCreate form-group">
+                  <label for="price"></label>
+                  <input type="number" name="price" class="form-control" id="price" placeholder="Price">
+              </div>
+              <div class="adCreate form-group">
+                  <label for="usedAgainst"></label>
+                  <input type="text" name="usedAgainst" class="form-control" id="usedAgainst" placeholder="Used Against">
+              </div>
+              <div class="adCreate form-group">
+                  <label for="batCondition"></label>
+                  <input type="text" name="batCondition" class="form-control" id="batCondition" placeholder="Condition">
+              </div>
+              <div class="adCreate form-group">
+                  <label for="generation"></label>
+                  <input type="text" name="generation" class="form-control" id="generation" placeholder="Generation">
+              </div>
+              <div class="adCreate form-group">
+                  <label for="image">File input</label>
+                  <input type="file" name="image" id="image">
+              </div>
+              <div>
+                <label for="description"></label>
+                  <textarea    type="text" id="description" name="description" placeholder="description" rows="5" cols="40"
+                  autofocus></textarea>
+              </div>
+              <button type="submit" class="adCreate btn-submit btn-default">Submit</button>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
