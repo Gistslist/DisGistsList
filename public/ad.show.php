@@ -19,6 +19,7 @@ require_once '../Input_copy.php';
 $stmt = $dbc->prepare('SELECT * FROM ad_list'); 
 // $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
 // $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+
 $stmt->execute();
 $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
