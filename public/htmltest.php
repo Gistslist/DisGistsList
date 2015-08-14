@@ -1,12 +1,9 @@
 <?php
-<<<<<<< HEAD
+
 
 require_once "ad.show.php";
 require_once "users.create.php";
-=======
-// require_once "ad.show.php";
 require_once "create_form_test.php";
->>>>>>> a5fb76d67d59e46ddac670d3dda01e1d210ce372
 
 
 ?>
@@ -106,16 +103,15 @@ require_once "create_form_test.php";
         <div class="container">
             <ul class="bxslider">
             <?php foreach ($items as $item): ?>
-<<<<<<< HEAD
                 <li><img src="<?= $item['image'] ?>" title="<?= $item['item_name'] ?>" id="<?= $item['id'] ?>" /></li>
-=======
                 <li><img src="<?= $item['image'] ?>" id="<?= $item['id'] ?>" /></li>
->>>>>>> a9e9dcc51c0d1259bb7589031f8801ff1d084820
             <? endforeach ?>
             </ul>
         </div>
     </section>
 
+
+    <!-- POST AD SECTION -->
     <section id="post_ad" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
@@ -148,10 +144,6 @@ require_once "create_form_test.php";
                                         <input type="number" name="price"class="form-control" aria-label="Amount (to the nearest dollar)">
                                         <span class="input-group-addon">.00</span>
                                       </div>
-                                      <!-- <div class="adCreate form-group">
-                                          <label for="price"></label>
-                                          <input type="number" name="price" class="form-control" id="price" placeholder="Price">
-                                      </div> -->
                                       <div class="adCreate form-group">
                                           <label for="used_against"></label>
                                           <input type="text" name="used_against" class="form-control" id="used_against" placeholder="Used Against">
@@ -175,29 +167,22 @@ require_once "create_form_test.php";
                                           <input type="text" name="description" class="form-control" id="description" placeholder="Description">
                                       </div>
 
-                                     <!--  <div>
-                                        <label for="description"></label>
-                                          <textarea  type="text" id="description" name="description" placeholder="description" rows="5" cols="40"
-                                          ></textarea>
-                                      </div> -->
                                       <button type="submit" class="adCreate btn-submit btn-default">Submit</button>
                                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                     </div>
                                     <div class="modal-footer">
-                                <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+                                
                                 </form>
                               </div>
                             </div>
                           </div>
-                        <!-- </div> -->
+                        
             </div>
         </div>
     </section>
 
-    <!-- <section>experience</section>
-    <section>thoughts</section> -->
 
-    <!-- <section id="about" class="container content-section text-center">
+    <section id="about" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Contact Me</h2>
@@ -214,7 +199,7 @@ require_once "create_form_test.php";
                 </ul>
             </div>
         </div>
-    </section> -->
+    </section>
 
     <!-- REGISTER MODAL -->
     <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel">
