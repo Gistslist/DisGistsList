@@ -21,28 +21,31 @@ require_once 'create_form_test.php';
 <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   
 </button> -->
+<? foreach ($items as $item): ?>
 
-<a href="#myModal" role="button" data-toggle="modal">
+<a href="#myModal<?= $item['id'] ?>" role="button" data-toggle="modal">
 
-    <img src="/img/batarang.jpg">
+    <img src="<?= $item['image'] ?>">
 
 </a>
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="myModal<?= $item['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="myModalLabel">The Batarang</h3>
+
+        <div class="modal-title" id="myModalLabel"><img src="<?= $item['image'] ?>" width="100%"></div>
       </div>
       <div class="modal-body">
-        <?php foreach ($items as $item): ?>
-                  <h4>"<?= $item['item_name']; ?> " </h4>
-            <? endforeach ?>
+        <h3><?= $item['item_name'] ?></h3>
+        <p><?= $item['description'] ?></p>
+        
 
       </div>
       <div class="modal-footer">
+         <p> Price: $<?= $item['price'] ?> </p>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Buy</button>
 
@@ -50,5 +53,7 @@ require_once 'create_form_test.php';
     </div>
   </div>
 </div>
+
+<? endforeach ?>
 </body>
 </html>

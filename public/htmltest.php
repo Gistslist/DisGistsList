@@ -103,8 +103,16 @@ require_once "create_form_test.php";
         <div class="container">
             <ul class="bxslider">
             <?php foreach ($items as $item): ?>
+<<<<<<< HEAD
                 <li><img src="<?= $item['image'] ?>" title="<?= $item['item_name'] ?>" id="<?= $item['id'] ?>" /></li>
                 <li><img src="<?= $item['image'] ?>" id="<?= $item['id'] ?>" /></li>
+=======
+
+                <li><img src="<?= $item['image'] ?>" title="<?= $item['item_name'] ?>" id="<?= $item['id'] ?>" /></li>
+
+                <li><img src="<?= $item['image'] ?>" id="<?= $item['id'] ?>" /></li>
+
+>>>>>>> eb70c9a2dab702020d2f86ea2a08a2aa0ca31f0a
             <? endforeach ?>
             </ul>
         </div>
