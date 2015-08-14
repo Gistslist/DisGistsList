@@ -26,9 +26,9 @@ class Input
             throw new Exception('must be a string!');
             }
             
-            if(is_numeric($value)){
-                throw new Exception('cannot contain a number!');
-            }
+            // if(is_numeric($value)){
+            //     throw new Exception('cannot contain a number!');
+            // }
             
             $min = (strlen($key)< 3);
             

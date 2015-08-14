@@ -1,21 +1,28 @@
 <?php
-//require_once ;
-if (empty($_POST)) {
-  (" ");
-}
-else if (!empty($_POST)) {
-  $query = 'INSERT INTO users (userName, password, email, phone, firstName, lastName)
-      VALUES (:userName, :password, :email, :phone, :firstName, :lastName)';
+require_once '../bat_config.php';
+require_once '../db_connect_copy.php';
+require_once '../Input_copy.php';
+
+$userstmt = $dbc->prepare('SELECT * FROM bat_user'); 
+// $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+// $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+$userstmt->execute();
+$users = $userstmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+if (Input::has('first_name')) {
+  $query = 'INSERT INTO bat_user(first_name, last_name, user_name, password, email)
+            VALUES (:first_name, :last_name, :user_name, :password, :email)';
 
   $stmt = $dbc->prepare($query);
-  $stmt->bindValue(':userName',       $_POST['userName'], PDO::PARAM_STR);
-  $stmt->bindValue(':password',       $_POST['password'], PDO::PARAM_STR);
-  $stmt->bindValue(':email',          $_POST['email'],    PDO::PARAM_STR);
-  $stmt->bindValue(':phone',          $_POST['phone'],    PDO::PARAM_STR);
-  $stmt->bindValue(':firstName',      $_POST['firstName'], PDO::PARAM_STR);
-  $stmt->bindValue(':lastName',       $_POST['lastName'], PDO::PARAM_STR);
+  $stmt->bindValue(':first_name', Input::get('first_name'), PDO::PARAM_STR);
+  $stmt->bindValue(':last_name', Input::get('last_name'), PDO::PARAM_STR);
+  $stmt->bindValue(':user_name', Input::get('user_name'), PDO::PARAM_STR);
+  $stmt->bindValue(':password', Input::get('password'), PDO::PARAM_STR);
+  $stmt->bindValue(':email', Input::get('email'), PDO::PARAM_STR);
   $stmt->execute();
-  echo "Inserted ID: " . $dbc->lastInsertId() . PHP_EOL;
+  // echo "Inserted ID: " . $dbc->lastInsertId() . PHP_EOL;
 }
 ?>
 <html>
@@ -42,13 +49,21 @@ else if (!empty($_POST)) {
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Registration</h4>
+        <h4 class="modal-title" id="myModalLabel">Please create a new user profile</h4>
       </div>
       <div class="modal-body">
-        <form>
+        <form method="POST" action="users.create.php">
               <div class="userCreate form-group">
-                  <label for="userName"></label>
-                  <input type="text" name="userName" class="form-control" id="userName" placeholder="userName">
+                  <label for="first_name"></label>
+                  <input type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name">
+              </div>
+              <div class="userCreate form-group">
+                  <label for="last_name"></label>
+                  <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Last Name">
+              </div>
+              <div class="userCreate form-group">
+                  <label for="user_name"></label>
+                  <input type="text" name="user_name" class="form-control" id="user_name" placeholder="Username">
               </div>
               <div class="userCreate form-group">
                   <label for="password"></label>
@@ -58,28 +73,12 @@ else if (!empty($_POST)) {
                   <label for="email"></label>
                   <input type="text" name="email" class="form-control" id="email" placeholder="Email">
               </div>
-              <div class="userCreate form-group">
-                  <label for="phone"></label>
-                  <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone">
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-warning">Submit</button>
               </div>
-              <div class="userCreate form-group">
-                  <label for="firstName"></label>
-                  <input type="text" name="firstName" class="form-control" id="firstName" placeholder="First Name">
-              </div>
-              <div class="userCreate form-group">
-                  <label for="lastName"></label>
-                  <input type="text" name="lastName" class="form-control" id="lastName" placeholder="Last Name">
-              </div>
-              <div class="userCreate form-group">
-                  <label for="image">File input</label>
-                  <input type="file" name="image" id="image">
-              </div>
-              <button type="submit" class="userCreate btn-submit btn-default">Submit</button>
+              
           </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
