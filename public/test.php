@@ -7,7 +7,7 @@ require_once 'ad.show.php';
 <!DOCTYPE html>
 <html>
 <head>
-  <title>bat stuff</title>
+  <title>test</title>
   <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +29,7 @@ require_once 'ad.show.php';
 <body>
  	<ul class="bxslider">
             <?php foreach ($items as $item): ?>
-                <li><img src="/img/<?= $item['image'] ?>" title="<?= $item['item_name'] ?>" id="<?= $item['id'] ?>" /></li>
+                <li><img src="<?= $item['image'] ?>" title="<?= $item['item_name'] ?>" id="<?= $item['id'] ?>" /></li>
             <? endforeach ?>
             </ul>
     	

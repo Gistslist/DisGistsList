@@ -2,7 +2,7 @@
 require 'bat_config.php';
 require 'db_connect_copy.php';
 
-echo $dbc->getAttribute(PDO::ATTR_CONNECTION_STATUS) . "\n";
+
 $truncstmt=$dbc->prepare('TRUNCATE bat_user');
 $truncstmt->execute();
 $users = [

@@ -75,14 +75,15 @@ class Model {
 
         $table = static::$table;
 
-        $query = "INSERT INTO $table (first_name, last_name, username, password)
-                    VALUES (':first_name', ':last_name', ':username', ':password');";
+        $query = "INSERT INTO $table (first_name, last_name, username, password, email)
+                    VALUES (':first_name', ':last_name', ':username', ':password', :'email');";
 
         $stmt = self::$dbc->prepare($query);
         $stmt->bindValue(':first_name', $this->first_name,  PDO::PARAM_STR);
         $stmt->bindValue(':last_name',  $this->last_name,   PDO::PARAM_STR);
         $stmt->bindValue(':username',   $this->username,    PDO::PARAM_STR);
         $stmt->bindValue(':password',   $this->password,    PDO::PARAM_STR);
+        $stmt->bindValue(':email',      $this->email,       PDO::PARAM_STR);
         $stmt->execute();
 
         // @TODO: After insert, add the id back to the attributes array so the object can properly reflect the id
