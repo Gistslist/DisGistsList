@@ -16,10 +16,10 @@ require_once "create_form_test.php";
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-    <!-- bxSlider CSS file -->
-    <link rel="stylesheet" href="/css/jquery.bxslider.css">
     <link rel="stylesheet" type="text/css" href="/css/grayscale.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <!-- bxSlider CSS file -->
+    <link rel="stylesheet" href="/css/jquery.bxslider.css">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -30,6 +30,7 @@ require_once "create_form_test.php";
   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/grayscale.js"></script>
     <script src="/js/jquery.bxslider.min.js"></script>
     <script src="/js/main.js"></script>
 
@@ -84,7 +85,7 @@ require_once "create_form_test.php";
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">Batlist</h1>
                         <p class="intro-text">Holy Contributing to the delinquency of minors! Batman's broke! Buy his stuff!</p>
-                        <a href="#about" class="btn btn-circle page-scroll">
+                        <a href="#browse" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
                     </div>
@@ -98,7 +99,11 @@ require_once "create_form_test.php";
         <div class="container">
             <ul class="bxslider">
             <?php foreach ($items as $item): ?>
+<<<<<<< HEAD
                 <li><img src="<?= $item['image'] ?>" title="<?= $item['item_name'] ?>" id="<?= $item['id'] ?>" /></li>
+=======
+                <li><img src="<?= $item['image'] ?>" id="<?= $item['id'] ?>" /></li>
+>>>>>>> a9e9dcc51c0d1259bb7589031f8801ff1d084820
             <? endforeach ?>
             </ul>
         </div>

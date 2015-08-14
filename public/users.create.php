@@ -1,18 +1,26 @@
 <?php
-//require_once ;
-if (empty($_POST)) {
-  (" ");
-}
-else if (!empty($_POST)) {
+require_once '../bat_config.php';
+require_once '../db_connect_copy.php';
+require_once '../Input_copy.php';
+
+$userstmt = $dbc->prepare('SELECT * FROM bat_user'); 
+// $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+// $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+$userstmt->execute();
+$users = $userstmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+if (Input::has('first_name')) {
   $query = 'INSERT INTO bat_user(first_name, last_name, user_name, password, email)
             VALUES (:first_name, :last_name, :user_name, :password, :email)';
 
   $stmt = $dbc->prepare($query);
-  $stmt->bindValue(':first_name', $user['user_name'], PDO::PARAM_STR);
-  $stmt->bindValue(':last_name', $user['user_name'], PDO::PARAM_STR);
-  $stmt->bindValue(':user_name', $user['user_name'], PDO::PARAM_STR);
-  $stmt->bindValue(':password', $user['password'], PDO::PARAM_STR);
-  $stmt->bindValue(':email', $user['email'], PDO::PARAM_STR);
+  $stmt->bindValue(':first_name', Input::get('first_name'), PDO::PARAM_STR);
+  $stmt->bindValue(':last_name', Input::get('last_name'), PDO::PARAM_STR);
+  $stmt->bindValue(':user_name', Input::get('user_name'), PDO::PARAM_STR);
+  $stmt->bindValue(':password', Input::get('password'), PDO::PARAM_STR);
+  $stmt->bindValue(':email', Input::get('email'), PDO::PARAM_STR);
   $stmt->execute();
   // echo "Inserted ID: " . $dbc->lastInsertId() . PHP_EOL;
 }
@@ -44,7 +52,7 @@ else if (!empty($_POST)) {
         <h4 class="modal-title" id="myModalLabel">Please create a new user profile</h4>
       </div>
       <div class="modal-body">
-        <form>
+        <form method="POST" action="users.create.php">
               <div class="userCreate form-group">
                   <label for="first_name"></label>
                   <input type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name">
@@ -65,12 +73,12 @@ else if (!empty($_POST)) {
                   <label for="email"></label>
                   <input type="text" name="email" class="form-control" id="email" placeholder="Email">
               </div>
-              <button type="submit" class="userCreate btn-submit btn-default">Submit</button>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-warning">Submit</button>
+              </div>
+              
           </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
