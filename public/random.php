@@ -49,12 +49,13 @@ if(Input::has('item_name')){
     $bat_condition = Input::getString('bat_condition');
     $generation = Input::get('generation');
     $description = Input::getString('description');
+    $user_id = 1;
     
 
    
 
-    $insertQuery = "INSERT INTO ad_list (item_name, price, description, used_against, bat_condition, generation, image)
-            VALUES (:item_name, :price, :description, :used_against, :bat_condition, :generation, :image)";
+    $insertQuery = "INSERT INTO ad_list (item_name, price, description, used_against, bat_condition, generation, image, user_id)
+            VALUES (:item_name, :price, :description, :used_against, :bat_condition, :generation, :image, :user_id)";
     $stmt=$dbc->prepare($insertQuery);
     
     
@@ -65,7 +66,9 @@ if(Input::has('item_name')){
     $stmt->bindValue(':bat_condition', $bat_condition, PDO::PARAM_STR);
     $stmt->bindValue(':generation', $generation, PDO::PARAM_STR);
     $stmt->bindValue(':description', $description, PDO::PARAM_STR);
-    $stmt->bindValue(':image', $filename, PDO::PARAM_STR);      
+    $stmt->bindValue(':image', $filename, PDO::PARAM_STR);
+    $stmt->bindValue(':user_id', $user_id, PDO::PARAM_STR);
+
     $stmt->execute();
       
       

@@ -1,5 +1,6 @@
 <?php
-require_once "ad.show.php";
+// require_once "ad.show.php";
+require_once "create_form_test.php";
 
 
 ?>
@@ -24,6 +25,8 @@ require_once "ad.show.php";
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"> -->
+
   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -95,7 +98,7 @@ require_once "ad.show.php";
         <div class="container">
             <ul class="bxslider">
             <?php foreach ($items as $item): ?>
-                <li><img src="/img/<?= $item['image'] ?>" title="<?= $item['item_name'] ?>" id="<?= $item['id'] ?>" /></li>
+                <li><img src="<?= $item['image'] ?>" title="<?= $item['item_name'] ?>" id="<?= $item['id'] ?>" /></li>
             <? endforeach ?>
             </ul>
         </div>
@@ -105,15 +108,84 @@ require_once "ad.show.php";
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Sell your Bat Gadgets!</h2>
-                <p>Feel free to contact me or follow my work!</p>
+
+                     <!-- <div class='container'> -->
+                               <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary btn-lg center" data-toggle="modal" data-target="#myModal">
+                          Create An Ad!
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade container" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Create Ad</h4>
+                              </div>
+                              <div class="modal-body">
+                                <form method="POST" action="htmltest.php" enctype="multipart/form-data">
+                                      <fieldset>
+                                      <div class="adCreate form-group">
+                                          <label for="item_name"></label>
+                                          <input type="text" name="item_name" class="form-control" id="item_name" placeholder="Item Name">
+                                      </div>
+                                      <div class="adCreate form-group input-group">
+                                        <label for="price"></label>
+                                        <span class="input-group-addon">$</span>
+                                        <input type="number" name="price"class="form-control" aria-label="Amount (to the nearest dollar)">
+                                        <span class="input-group-addon">.00</span>
+                                      </div>
+                                      <!-- <div class="adCreate form-group">
+                                          <label for="price"></label>
+                                          <input type="number" name="price" class="form-control" id="price" placeholder="Price">
+                                      </div> -->
+                                      <div class="adCreate form-group">
+                                          <label for="used_against"></label>
+                                          <input type="text" name="used_against" class="form-control" id="used_against" placeholder="Used Against">
+                                      </div>
+                                      <div class="adCreate form-group">
+                                          <label for="bat_condition"></label>
+                                          <input type="text" name="bat_condition" class="form-control" id="bat_condition" placeholder="Condition">
+                                      </div>
+                                      <div class="adCreate form-group">
+                                          <label for="generation"></label>
+                                          <input type="text" name="generation" class="form-control" id="generation" placeholder="Generation">
+                                      </div>
+                                      <div class="adCreate form-group">
+                                          <label for="image">File input</label>
+                                          <input type="file" name="image" id="image">
+                                      </div>
+                                      
+                                      </div>
+                                      <div class="adCreate form-group center">
+                                          <label for="description"></label>
+                                          <input type="text" name="description" class="form-control" id="description" placeholder="Description">
+                                      </div>
+
+                                     <!--  <div>
+                                        <label for="description"></label>
+                                          <textarea  type="text" id="description" name="description" placeholder="description" rows="5" cols="40"
+                                          ></textarea>
+                                      </div> -->
+                                      <button type="submit" class="adCreate btn-submit btn-default">Submit</button>
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                    <div class="modal-footer">
+                                <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        <!-- </div> -->
             </div>
         </div>
     </section>
 
-    <section>experience</section>
-    <section>thoughts</section>
+    <!-- <section>experience</section>
+    <section>thoughts</section> -->
 
-    <section id="about" class="container content-section text-center">
+    <!-- <section id="about" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Contact Me</h2>
@@ -130,7 +202,7 @@ require_once "ad.show.php";
                 </ul>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <footer>
         <div class="container text-center">
