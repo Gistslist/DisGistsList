@@ -1,183 +1,252 @@
 <?php
 
+//$dbc = new PDO('mysql:host=127.0.0.1;dbname=database_name', 'USERNAME', 'PASSWORD');
 
+ ?>
 
+ <!DOCTYPE html>
+ <html>
+   <head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-?>
+     <!---Stylize--->
+     <link href="css/bootstrap.min.css" rel="stylesheet">
+     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="/css/main.css">
 
-<html>
-<head>
-	<title>Batlist</title>
+     <!---Scriptkiddies--->
+ 		 <script src="/js/modernizr.custom.js"></script>
+   </head>
+   <body id="page-top" class="index" data-spy="scroll" data-target=".navbar-fixed-top">
+     <?php include '../views/Navvvy.php';?>
+     <?php include '../views/Signal.php';?>
 
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+     <nav class="navbar navbar-a navbar-b">
 
-    <!-- Stylesheets -->
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="/css/grayscale.css">
-	<link rel="stylesheet" type="text/css" href="/css/main.css">
+    <div class="main">
+      <ul id="og-grid" class="og-grid">
+        <li>
+          <a href="" data-largesrc="images/1.jpg" data-title="Mars" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+            <img src="/img/Acc.jpg" alt="img01"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/2.jpg" data-title="Lorne" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+            <img src="/img/cc.png" alt="img02"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/3.jpg" data-title="Tom" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+            <img src="/img/Mart22.png" alt="img03"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/1.jpg" data-title="Mars" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+            <img src="/img/Acc.jpg" alt="img01"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/2.jpg" data-title="Lorne" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+            <img src="/img/cc.png" alt="img02"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/3.jpg" data-title="Tom" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+            <img src="/img/Mart22.png" alt="img03"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/1.jpg" data-title="Mars" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+            <img src="/img/Acc.jpg" alt="img01"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/2.jpg" data-title="Lorne" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+            <img src="/img/cc.png" alt="img02"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/3.jpg" data-title="Tom" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+            <img src="/img/Mart22.png" alt="img03"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/1.jpg" data-title="Mars" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+            <img src="/img/Acc.jpg" alt="img01"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/2.jpg" data-title="Lorne" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+            <img src="/img/cc.png" alt="img02"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/3.jpg" data-title="Tom" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+            <img src="/img/Mart22.png" alt="img03"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/1.jpg" data-title="Mars" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+            <img src="/img/Acc.jpg" alt="img01"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/2.jpg" data-title="Lorne" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+            <img src="/img/cc.png" alt="img02"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/3.jpg" data-title="Tom" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+            <img src="/img/Mart22.png" alt="img03"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/1.jpg" data-title="Mars" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+            <img src="/img/Acc.jpg" alt="img01"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/2.jpg" data-title="Lorne" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+            <img src="/img/cc.png" alt="img02"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/3.jpg" data-title="Tom" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+            <img src="/img/Mart22.png" alt="img03"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/1.jpg" data-title="Mars" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+            <img src="/img/Acc.jpg" alt="img01"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/2.jpg" data-title="Lorne" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+            <img src="/img/cc.png" alt="img02"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/3.jpg" data-title="Tom" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+            <img src="/img/Mart22.png" alt="img03"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/1.jpg" data-title="Mars" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+            <img src="/img/Acc.jpg" alt="img01"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/2.jpg" data-title="Lorne" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+            <img src="/img/cc.png" alt="img02"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/3.jpg" data-title="Tom" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+            <img src="/img/Mart22.png" alt="img03"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/1.jpg" data-title="Mars" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+            <img src="/img/Acc.jpg" alt="img01"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/2.jpg" data-title="Lorne" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+            <img src="/img/cc.png" alt="img02"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/3.jpg" data-title="Tom" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+            <img src="/img/Mart22.png" alt="img03"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/1.jpg" data-title="Mars" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+            <img src="/img/Acc.jpg" alt="img01"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/2.jpg" data-title="Lorne" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+            <img src="/img/cc.png" alt="img02"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/3.jpg" data-title="Tom" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+            <img src="/img/Mart22.png" alt="img03"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/1.jpg" data-title="Mars" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+            <img src="/img/Acc.jpg" alt="img01"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/2.jpg" data-title="Lorne" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+            <img src="/img/cc.png" alt="img02"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/3.jpg" data-title="Tom" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+            <img src="/img/Mart22.png" alt="img03"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/1.jpg" data-title="Mars" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+            <img src="/img/Acc.jpg" alt="img01"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/2.jpg" data-title="Lorne" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+            <img src="/img/cc.png" alt="img02"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/3.jpg" data-title="Tom" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+            <img src="/img/Mart22.png" alt="img03"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/1.jpg" data-title="Mars" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+            <img src="/img/Acc.jpg" alt="img01"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/2.jpg" data-title="Lorne" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+            <img src="/img/cc.png" alt="img02"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/3.jpg" data-title="Tom" data-description="Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.">
+            <img src="/img/Mart22.png" alt="img03"/>
+          </a>
+        </li>
+        <li>
+          <a href="" data-largesrc="images/1.jpg" data-title="Mars" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+            <img src="/img/Acc.jpg" alt="img01"/>
+          </a>
+        </li>
+      </ul>
+      <a id="og-additems" href="#">add more</a>
+    </div>
+  </div><!-- /container -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="js/grid.js"></script>
+  <script>
+    $(function() {
+      Grid.init();
+    });
+  </script>
 
-	<!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  
+<h2></h2>
+<a href="#" style="float: left" onclick="galleryspin('-')">◀</a>
+<a href="#" style="float: right" onclick="galleryspin('')">▶</a>
 
+  </div>
+</div>
 
-</head>
-
-<bodyid="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-
-	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-play-circle"></i>  <span class="light">Holy Bluebeard!</span>
-                </a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#browse">Browse</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#login">Log In</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#search">Search</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#signup">Sign Up</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">List your Bat Ad</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <header class="intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Batlist</h1>
-                        <p class="intro-text">Holy Contributing to the delinquency of minors! Batman's broke! Buy his stuff!</p>
-                        <a href="#about" class="btn btn-circle page-scroll">
-                            <i class="fa fa-angle-double-down animated"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <section id="browse" class="container content-section">
-    	<!-- <div class="container"> -->
-		  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-		    <!-- Indicators -->
-		    <ol class="carousel-indicators">
-		      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-		      <li data-target="#myCarousel" data-slide-to="1"></li>
-		      <li data-target="#myCarousel" data-slide-to="2"></li>
-		      <li data-target="#myCarousel" data-slide-to="3"></li>
-		    </ol>
-
-		    <!-- Wrapper for slides -->
-		    <div class="carousel-inner" role="listbox">
-
-		      <div class="item active">
-		        <img src="/img/phpninja.png" alt="Chania" width="460" height="345">
-		        <div class="carousel-caption">
-		          <h3>Chania</h3>
-		          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
-		        </div>
-		      </div>
-
-		      <div class="item">
-		        <img src="/img/phpninja.png" alt="Chania" width="460" height="345">
-		        <div class="carousel-caption">
-		          <h3>Chania</h3>
-		          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
-		        </div>
-		      </div>
-		    
-		      <div class="item">
-		        <img src="/img/phpninja.png" alt="Flower" width="460" height="345">
-		        <div class="carousel-caption">
-		          <h3>Flowers</h3>
-		          <p>Beatiful flowers in Kolymbari, Crete.</p>
-		        </div>
-		      </div>
-
-		      <div class="item">
-		        <img src="/img/phpninja.png" alt="Flower" width="460" height="345">
-		        <div class="carousel-caption">
-		          <h3>Flowers</h3>
-		          <p>Beatiful flowers in Kolymbari, Crete.</p>
-		        </div>
-		      </div>
-		  
-		    </div>
-
-		    <!-- Left and right controls -->
-		    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-		      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-		      <span class="sr-only">Previous</span>
-		    </a>
-		    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-		      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-		      <span class="sr-only">Next</span>
-		    </a>
-		  </div>
-		<!-- </div> -->
-    </section>
-
-	<section>portfolio</section>
-	<section>experience</section>
-	<section>thoughts</section>
-
-	<section id="contact" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Contact Me</h2>
-                <p>Feel free to contact me or follow my work!</p>
-                <p><a href="mailto:lorne21@gmail.com">lorne21@gmail.com</a>
-                </p>
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://facebook.com/lorne.barfield" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/lorne21" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-	<footer>
-        <div class="container text-center">
-            <p>Copyright &copy; Batlist 2015</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+   </body>
+ </html>

@@ -53,6 +53,8 @@ if (isset($_SESSION['LOGGED_IN_USER'])){
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<?php include '../views/Navvvy.php';?>
+     <?php include '../views/Signal.php';?>
 	<h1 align="center">Login</h1>
 
 	<p><?= $_SESSION['loginmessage'] . $_SESSION['logoutmessage']; ?></p> 
