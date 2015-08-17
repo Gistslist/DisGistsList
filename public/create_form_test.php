@@ -4,7 +4,6 @@ require_once '../bat_config.php';
 require_once '../db_connect_copy.php';
 require_once '../Input_copy.php';
 require_once 'bat_login.php';
-require_once 'bat_logout.php';
 // require_once "ad.show.php";
 
 $query = ("SELECT * FROM ad_list");
@@ -14,7 +13,7 @@ if(isset($_SESSION['USERNAME'])){
     $setUser = $_SESSION['USERNAME'];
     $userQuery = ("SELECT user_id FROM bat_user WHERE user_name = '$setUser'");
     $idStmt = $dbc->prepare($query);
-    $idStmt-execute();
+    $idStmt->execute();
     $userVerify = $idStmt->fetchAll(PDO::FETCH_ASSOC);
 }
 //bind
@@ -32,23 +31,17 @@ if(Input::has('item_name')){
         } else {
             //alert("Sorry, there was an error uploading your file.");
         }
-<<<<<<< HEAD
+
     
   
-=======
 
->>>>>>> 5043e1fd35b0e94b16f16af2084853e1c7a8314e
     $item_name = Input::getString('item_name');
     $price = Input::get('price');
     $used_against = Input::getString('used_against');
     $bat_condition = Input::getString('bat_condition');
     $generation = Input::get('generation');
     $description = Input::getString('description');
-<<<<<<< HEAD
-    
-=======
-    $user_id = 1;
->>>>>>> 5043e1fd35b0e94b16f16af2084853e1c7a8314e
+
 
 
 
@@ -56,13 +49,10 @@ if(Input::has('item_name')){
     $insertQuery = "INSERT INTO ad_list (item_name, price, description, used_against, bat_condition, generation, image, user_id)
             VALUES (:item_name, :price, :description, :used_against, :bat_condition, :generation, :image, :user_id)";
     $stmt=$dbc->prepare($insertQuery);
-<<<<<<< HEAD
+
     
     $idGrab = $userVerify['0']['user_id'];
-=======
 
-
->>>>>>> 5043e1fd35b0e94b16f16af2084853e1c7a8314e
 
     $stmt->bindValue(':item_name', $item_name, PDO::PARAM_STR);
     $stmt->bindValue(':price', $price, PDO::PARAM_STR);
