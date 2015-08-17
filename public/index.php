@@ -18,7 +18,7 @@ require_once "create_form_test.php";
      <link rel="stylesheet" type="text/css" href="/css/main.css">
 
      <!---Scriptkiddies--->
-
+     <script src="/js/main.js"></script>
  		 <script src="/js/modernizr.custom.js"></script>
    </head>
    <body id="page-top" class="index" data-spy="scroll" data-target="navbar-fixed-top">
@@ -245,10 +245,8 @@ require_once "create_form_test.php";
 <a href="#" style="float: left" onclick="galleryspin('-')">◀</a>
 <a href="#" style="float: right" onclick="galleryspin('')">▶</a>
 
-  </div>
-</div>
 
-<section id="browse" class="container content-section">
+    <section id="browse" class="container content-section">
         <div class="container">
             <ul class="bxslider">
             <?php foreach ($items as $item): ?>
@@ -329,7 +327,49 @@ require_once "create_form_test.php";
 
             </div>
         </div>
-    </section>
+    </section> <!--Post add end -->
+
+    <!-- REGISTER MODAL -->
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="registerModalLabel">Please create a new alter ego</h4>
+          </div>
+          <div class="modal-body">
+            <form method="POST" action="htmltest.php">
+                  <div class="userCreate form-group">
+                      <label for="first_name"></label>
+                      <input type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name">
+                  </div>
+                  <div class="userCreate form-group">
+                      <label for="last_name"></label>
+                      <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Last Name">
+                  </div>
+                  <div class="userCreate form-group">
+                      <label for="user_name"></label>
+                      <input type="text" name="user_name" class="form-control" id="user_name" placeholder="Username">
+                  </div>
+                  <div class="userCreate form-group">
+                      <label for="password"></label>
+                      <input type="text" name="password" class="form-control" id="password" placeholder="Password">
+                  </div>
+                  <div class="userCreate form-group">
+                      <label for="email"></label>
+                      <input type="text" name="email" class="form-control" id="email" placeholder="Email">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-warning">Submit</button>
+                  </div>
+
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END REGISTER MODAL -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
