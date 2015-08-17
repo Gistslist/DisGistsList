@@ -28,6 +28,7 @@ require_once "create_form_test.php";
                   </li>
                   <li>
                       <a href="#" data-toggle="modal" data-target="#loginModal">Log In</a>
+
                   </li>
                   <li>
                       <a href="#" data-toggle="modal" data-target="#registerModal">Sign Up</a>
