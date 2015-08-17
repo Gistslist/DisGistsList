@@ -105,10 +105,10 @@ require_once "bat_login.php";
         </div>
     </header>
     
-
     <section id="browse" class="container content-section">
         <div id="carousel">
           <figure id="spinner">
+<<<<<<< HEAD
           <?php foreach ($items as $item): ?>
             <img src="<?= $item['image'] ?>">              
           <? endforeach ?>  
@@ -120,13 +120,52 @@ require_once "bat_login.php";
           <img src=//demosthenes.info/assets/images/milky-blue-lagoon.jpg alt="">
           <img src=//demosthenes.info/assets/images/lake-tekapo.jpg alt="">
           <img src=//demosthenes.info/assets/images/milford-sound.jpg alt=""> -->
+=======
+            
+                    
+                <?php foreach ($items as $item): ?>
+
+                    <!-- <div role="button" data-toggle="modal" data-target="#myModal<?= $item['id'] ?>"> -->
+
+                        <img src="<?= $item['image'] ?>" role="button" data-toggle="modal" data-target="#myModal<?= $item['id'] ?>">
+
+                
+
+                <? endforeach ?> 
+            
+>>>>>>> 4cb5c77beedbf8431cd7ae3883976c8189122d78
           </figure>
         </div>
           <span style=float:left class=ss-icon onclick="galleryspin('-')">&lt;</span>
           <span style=float:right class=ss-icon onclick="galleryspin('')">&gt;</span>
     </section>
 
+<!-- Modal -->
+    <? foreach($items as $item):?>
+      <div class="modal fade" id="myModal<?= $item['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel<?= $item['id']?>">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
+              <div class="modal-title" id="myModalLabel<?= $item['id']?>"><img src="<?= $item['image'] ?>" width="100%"></div>
+              </div>
+                  <div class="modal-body">
+                    <h3><?= $item['item_name'] ?></h3>
+                    <p><?= $item['description'] ?></p>
+                    
+
+                  </div>
+            <div class="modal-footer">
+               <p> Price: $<?= $item['price'] ?> </p>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Buy</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    <? endforeach; ?>
     <!-- POST AD SECTION -->
     <section id="post_ad" class="container content-section text-center">
         <div class="row">

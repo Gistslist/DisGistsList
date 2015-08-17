@@ -35,7 +35,24 @@ if (isset($_SESSION['LOGGED_IN_USER'])){
 	if ($_SESSION['LOGGED_IN_USER']){
 		$_SESSION['loginmessage'] = '';
 		$_SESSION['logoutmessage'] = 'Log Out';
+<<<<<<< HEAD
 	}
 }
+=======
+
+
+	} 
+} else {
+	$_SESSION['loginmessage'] = 'Log In';
+	$_SESSION['logoutmessage'] = '';
+	$_SESSION['USERNAME'] = 'Batschelet';
+
+	}
+// }
+
+	// }
+// }
+
+>>>>>>> 4cb5c77beedbf8431cd7ae3883976c8189122d78
 
 ?>
