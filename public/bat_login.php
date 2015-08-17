@@ -59,7 +59,7 @@ if (isset($_SESSION['LOGGED_IN_USER'])){
 <body>
 	<?php include '../views/Navvvy.php';?>
      <?php include '../views/Signal.php';?>
-	<h1 align="center">Login</h1>
+	<h1 align="center" >Login</h1>
 
 	<p><?= $_SESSION['loginmessage'] . $_SESSION['logoutmessage']; ?></p>
 	<p>Holy <?= $_SESSION['USERNAME'] ?><p>
