@@ -1,6 +1,8 @@
 <?php
 
-//$dbc = new PDO('mysql:host=127.0.0.1;dbname=database_name', 'USERNAME', 'PASSWORD');
+require_once "ad.show.php";
+require_once "users.create.php";
+require_once "create_form_test.php";
 
  ?>
 
@@ -16,13 +18,14 @@
      <link rel="stylesheet" type="text/css" href="/css/main.css">
 
      <!---Scriptkiddies--->
+
  		 <script src="/js/modernizr.custom.js"></script>
    </head>
-   <body id="page-top" class="index" data-spy="scroll" data-target=".navbar-fixed-top">
+   <body id="page-top" class="index" data-spy="scroll" data-target="navbar-fixed-top">
+
      <?php include '../views/Navvvy.php';?>
      <?php include '../views/Signal.php';?>
 
-     <nav class="navbar navbar-a navbar-b">
 
     <div class="main">
       <ul id="og-grid" class="og-grid">
@@ -244,6 +247,89 @@
 
   </div>
 </div>
+
+<section id="browse" class="container content-section">
+        <div class="container">
+            <ul class="bxslider">
+            <?php foreach ($items as $item): ?>
+                <li><img src="<?= $item['image'] ?>" title="<?= $item['item_name'] ?>" id="<?= $item['id'] ?>" /></li>
+                <li><img src="<?= $item['image'] ?>" id="<?= $item['id'] ?>" /></li>
+                <li><img src="<?= $item['image'] ?>" title="<?= $item['item_name'] ?>" id="<?= $item['id'] ?>" /></li>
+                <li><img src="<?= $item['image'] ?>" id="<?= $item['id'] ?>" /></li>
+            <? endforeach ?>
+            </ul>
+        </div>
+    </section>
+
+    <!-- POST AD SECTION -->
+    <section id="post_ad" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Sell your Bat Gadgets!</h2>
+
+                     <!-- <div class='container'> -->
+                               <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary btn-lg center" data-toggle="modal" data-target="#myModal">
+                          Create An Ad!
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade container" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Create Ad</h4>
+                              </div>
+                              <div class="modal-body">
+                                <form method="POST" action="htmltest.php" enctype="multipart/form-data">
+                                      <fieldset>
+                                      <div class="adCreate form-group">
+                                          <label for="item_name"></label>
+                                          <input type="text" name="item_name" class="form-control" id="item_name" placeholder="Item Name">
+                                      </div>
+                                      <div class="adCreate form-group input-group">
+                                        <label for="price"></label>
+                                        <span class="input-group-addon">$</span>
+                                        <input type="number" name="price"class="form-control" aria-label="Amount (to the nearest dollar)">
+                                        <span class="input-group-addon">.00</span>
+                                      </div>
+                                      <div class="adCreate form-group">
+                                          <label for="used_against"></label>
+                                          <input type="text" name="used_against" class="form-control" id="used_against" placeholder="Used Against">
+                                      </div>
+                                      <div class="adCreate form-group">
+                                          <label for="bat_condition"></label>
+                                          <input type="text" name="bat_condition" class="form-control" id="bat_condition" placeholder="Condition">
+                                      </div>
+                                      <div class="adCreate form-group">
+                                          <label for="generation"></label>
+                                          <input type="text" name="generation" class="form-control" id="generation" placeholder="Generation">
+                                      </div>
+                                      <div class="adCreate form-group">
+                                          <label for="image">File input</label>
+                                          <input type="file" name="image" id="image">
+                                      </div>
+
+                                      </div>
+                                      <div class="adCreate form-group center">
+                                          <label for="description"></label>
+                                          <input type="text" name="description" class="form-control" id="description" placeholder="Description">
+                                      </div>
+
+                                      <button type="submit" class="adCreate btn-submit btn-default">Submit</button>
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                    <div class="modal-footer">
+
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+
+            </div>
+        </div>
+    </section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
