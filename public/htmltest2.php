@@ -5,6 +5,7 @@ require_once "ad.show.php";
 require_once "users.create.php";
 require_once "create_form_test.php";
 require_once "bat_login.php";
+// require_once "bat_logout.php";
 
 
 ?>
@@ -22,7 +23,7 @@ require_once "bat_login.php";
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/css/grayscale.css">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/css/main.css"> -->
     <!-- bxSlider CSS file -->
     <link rel="stylesheet" href="/css/jquery.bxslider.css">
 
@@ -50,7 +51,7 @@ require_once "bat_login.php";
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-play-circle"></i>  <span class="light">Batlist</span>
+                    <i class="fa fa-play-circle"></i>  <span class="light">Holy <?= $_SESSION['USERNAME'] ?></span>
                 </a>
             </div>
 
@@ -75,8 +76,11 @@ require_once "bat_login.php";
                     </li>
                     <li>
                         <a href="#login" data-toggle="modal" data-target="#loginModal">
-                          <?= $_SESSION['loginmessage'] . $_SESSION['logoutmessage']; ?>
+                          <?= $_SESSION['loginmessage']?>
                         </a>
+                    </li>
+                    <li>
+                        <a href="bat_logout.php"><?= $_SESSION['logoutmessage']; ?></a>
                     </li>
                 </ul>
             </div>
@@ -90,7 +94,7 @@ require_once "bat_login.php";
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Holy <?= $_SESSION['USERNAME'] ?></h1>
+                        <h1 class="brand-heading">Batlist</h1>
                         <p class="intro-text">Holy Contributing to the delinquency of minors! Batman's broke! Buy his stuff!</p>
                         <a href="#browse" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
@@ -135,7 +139,7 @@ require_once "bat_login.php";
                                 <h4 class="modal-title" id="myModalLabel">Create Ad</h4>
                               </div>
                               <div class="modal-body">
-                                <form method="POST" action="htmltest.php" enctype="multipart/form-data">
+                                <form method="POST" action="htmltest2.php" enctype="multipart/form-data">
                                       <fieldset>
                                       <div class="adCreate form-group">
                                           <label for="item_name"></label>
@@ -203,7 +207,7 @@ require_once "bat_login.php";
             <h4 class="modal-title" id="registerModalLabel">Please create a new alter ego</h4>
           </div>
           <div class="modal-body">
-            <form method="POST" action="htmltest.php">
+            <form method="POST" action="htmltest2.php">
                   <div class="userCreate form-group">
                       <label for="first_name"></label>
                       <input type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name">
@@ -245,11 +249,15 @@ require_once "bat_login.php";
             <h4 class="modal-title" id="loginModalLabel">Please enter your username and password</h4>
           </div>
           <div class="modal-body">
-            <form method="POST" action="htmltest.php">  
-              <label>Username</label>
-              <input type="text" name="login_user_name" id="login_user_name"><br>
-              <label>Password</label>
-              <input type="text" name="login_password" id="login_password"><br>
+            <form method="POST" action="htmltest2.php">  
+                <div class="userCreate form-group">
+                    <label for="login_user_name"></label>
+                    <input type="text" name="login_user_name" class="form-control" id="login_user_name" placeholder="Username">
+                </div>
+                <div class="userCreate form-group">
+                    <label for="login_password"></label>
+                    <input type="text" name="login_password" class="form-control" id="login_password" placeholder="Password">
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-warning">Submit</button>

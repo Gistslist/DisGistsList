@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once '../bat_config.php';
 require_once '../db_connect_copy.php';
@@ -53,7 +54,7 @@ class Auth
 	{
 		session_destroy();
 		
-		header("Location: http://gistslist.dev/bat_login.php");
+		header("Location: http://gistslist.dev/htmltest2.php");
 		exit();
 	}
 }
