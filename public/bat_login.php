@@ -35,6 +35,7 @@ if (isset($_SESSION['LOGGED_IN_USER'])){
 	if ($_SESSION['LOGGED_IN_USER']){
 		$_SESSION['loginmessage'] = '';
 		$_SESSION['logoutmessage'] = 'Log Out';
+<<<<<<< HEAD
 
 	} 
 } else {
@@ -44,10 +45,20 @@ if (isset($_SESSION['LOGGED_IN_USER'])){
 
 	}
 // }
-
+=======
+	}
+}
+>>>>>>> 04ece4e5acf858b41b966675fab4524d7051b503
 
 ?>
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 04ece4e5acf858b41b966675fab4524d7051b503
 <html>
 <head>
 	<title>Login</title>
@@ -103,4 +114,10 @@ if (isset($_SESSION['LOGGED_IN_USER'])){
     </div>
 
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 676bd36583c574aa38e74a19b5839339fe8beee0
+>>>>>>> 5043e1fd35b0e94b16f16af2084853e1c7a8314e
+>>>>>>> 04ece4e5acf858b41b966675fab4524d7051b503
