@@ -9,8 +9,10 @@ body {
     width: 100%;
     height: 100%;
     font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: #FFFFAB;
     background-color: #000;
+    color:#330066;
+    text-shadow:#000 1px 1px;
+    font-weight: bold;
 }
 
 html {
@@ -144,18 +146,19 @@ a:focus {
 }
 
 #content{
-  z-index: 1;
+  position: relative;
   text-align: center;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 25%;
-  border-radius: 5px;
+  margin-right: 11%;
+  margin-left: 11%;
+  margin-top: 27%;
+  border-radius: 8px;
   color:#FFFFAB;
-  text-shadow:#000 2px 2px;
+  font-weight: bolder;
+  text-shadow:#000 3px 3px;
 }
 
-video, #content {
-position: absolute;
+video {
+position: fixed;
 z-index: -1;
 opacity: 0.91;
 width: 100%;

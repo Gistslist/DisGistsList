@@ -18,14 +18,40 @@ require_once "create_form_test.php";
      <link rel="stylesheet" type="text/css" href="/css/main.css">
 
      <!---Scriptkiddies--->
+     <script src="/js/test.js"></script>
      <script src="/js/main.js"></script>
  		 <script src="/js/modernizr.custom.js"></script>
+     <script>var angle = 0;
+     function galleryspin(sign) {
+     spinner = document.querySelector("#spinner");
+     if (!sign) { angle = angle + 45; } else { angle = angle - 45; }
+     spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
+     }</script>
    </head>
-   <body id="page-top" class="index" data-spy="scroll" data-target="navbar-fixed-top">
 
+   <body>
      <?php include '../views/Navvvy.php';?>
      <?php include '../views/Signal.php';?>
 
+     <section id="browse" class="container content-section">
+        <div id="carousel">
+          <figure id="spinner">
+          <?php foreach ($items as $item): ?>
+            <img src="<?= $item['image'] ?>">
+          <? endforeach ?>
+          <img src=//demosthenes.info/assets/images/wanaka-tree.jpg alt="">
+          <img src=//demosthenes.info/assets/images/still-lake.jpg alt="">
+          <img src=//demosthenes.info/assets/images/pink-milford-sound.jpg alt="">
+          <img src=//demosthenes.info/assets/images/paradise.jpg alt="">
+          <img src=//demosthenes.info/assets/images/morekai.jpg alt="">
+          <img src=//demosthenes.info/assets/images/milky-blue-lagoon.jpg alt="">
+          <img src=//demosthenes.info/assets/images/lake-tekapo.jpg alt="">
+          <img src=//demosthenes.info/assets/images/milford-sound.jpg alt="">
+          </figure>
+        </div>
+          <span style=float:left class=ss-icon onclick="galleryspin('-')">&lt;</span>
+          <span style=float:right class=ss-icon onclick="galleryspin('')">&gt;</span>
+    </section>
 
     <div class="main">
       <ul id="og-grid" class="og-grid">
@@ -232,36 +258,16 @@ require_once "create_form_test.php";
       </ul>
       <a id="og-additems" href="#">add more</a>
     </div>
-  </div><!-- /container -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="js/grid.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
   <script>
     $(function() {
       Grid.init();
     });
   </script>
 
-<h2></h2>
-<a href="#" style="float: left" onclick="galleryspin('-')">◀</a>
-<a href="#" style="float: right" onclick="galleryspin('')">▶</a>
-
-
-    <section id="browse" class="container content-section">
-        <div class="container">
-            <ul class="bxslider">
-            <?php foreach ($items as $item): ?>
-                <li><img src="<?= $item['image'] ?>" title="<?= $item['item_name'] ?>" id="<?= $item['id'] ?>" /></li>
-                <li><img src="<?= $item['image'] ?>" id="<?= $item['id'] ?>" /></li>
-                <li><img src="<?= $item['image'] ?>" title="<?= $item['item_name'] ?>" id="<?= $item['id'] ?>" /></li>
-                <li><img src="<?= $item['image'] ?>" id="<?= $item['id'] ?>" /></li>
-            <? endforeach ?>
-            </ul>
-        </div>
-    </section>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
    </body>
  </html>
