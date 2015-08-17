@@ -5,7 +5,7 @@ require_once "ad.show.php";
 require_once "users.create.php";
 require_once "create_form_test.php";
 require_once "bat_login.php";
-// require_once "bat_logout.php";
+
 
 
 ?>
@@ -95,7 +95,7 @@ require_once "bat_login.php";
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">Batlist</h1>
-                        <p class="intro-text">Holy Contributing to the delinquency of minors! Batman's broke! Buy his stuff!</p>
+                        <p class="intro-text">Batman's broke! Buy his stuff!</p>
                         <a href="#browse" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
@@ -116,10 +116,10 @@ require_once "bat_login.php";
           <img src=//demosthenes.info/assets/images/still-lake.jpg alt="">
           <img src=//demosthenes.info/assets/images/pink-milford-sound.jpg alt="">
           <img src=//demosthenes.info/assets/images/paradise.jpg alt="">
-          <img src=//demosthenes.info/assets/images/morekai.jpg alt="">
+          <!-- <img src=//demosthenes.info/assets/images/morekai.jpg alt="">
           <img src=//demosthenes.info/assets/images/milky-blue-lagoon.jpg alt="">
           <img src=//demosthenes.info/assets/images/lake-tekapo.jpg alt="">
-          <img src=//demosthenes.info/assets/images/milford-sound.jpg alt="">
+          <img src=//demosthenes.info/assets/images/milford-sound.jpg alt=""> -->
           </figure>
         </div>
           <span style=float:left class=ss-icon onclick="galleryspin('-')">&lt;</span>
@@ -132,68 +132,10 @@ require_once "bat_login.php";
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Sell your Bat Gadgets!</h2>
-
-                     <!-- <div class='container'> -->
-                               <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary btn-lg center" data-toggle="modal" data-target="#myModal">
-                          Create An Ad!
-                        </button>
-
-                        <!-- Modal -->
-                        <div class="modal fade container" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                          <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Create Ad</h4>
-                              </div>
-                              <div class="modal-body">
-                                <form method="POST" action="htmltest2.php" enctype="multipart/form-data">
-                                      <fieldset>
-                                      <div class="adCreate form-group">
-                                          <label for="item_name"></label>
-                                          <input type="text" name="item_name" class="form-control" id="item_name" placeholder="Item Name">
-                                      </div>
-                                      <div class="adCreate form-group input-group">
-                                        <label for="price"></label>
-                                        <span class="input-group-addon">$</span>
-                                        <input type="number" name="price"class="form-control" aria-label="Amount (to the nearest dollar)">
-                                        <span class="input-group-addon">.00</span>
-                                      </div>
-                                      <div class="adCreate form-group">
-                                          <label for="used_against"></label>
-                                          <input type="text" name="used_against" class="form-control" id="used_against" placeholder="Used Against">
-                                      </div>
-                                      <div class="adCreate form-group">
-                                          <label for="bat_condition"></label>
-                                          <input type="text" name="bat_condition" class="form-control" id="bat_condition" placeholder="Condition">
-                                      </div>
-                                      <div class="adCreate form-group">
-                                          <label for="generation"></label>
-                                          <input type="text" name="generation" class="form-control" id="generation" placeholder="Generation">
-                                      </div>
-                                      <div class="adCreate form-group">
-                                          <label for="image">File input</label>
-                                          <input type="file" name="image" id="image">
-                                      </div>
-                                      
-                                      </div>
-                                      <div class="adCreate form-group center">
-                                          <label for="description"></label>
-                                          <input type="text" name="description" class="form-control" id="description" placeholder="Description">
-                                      </div>
-
-                                      <button type="submit" class="adCreate btn-submit btn-default">Submit</button>
-                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                    <div class="modal-footer">
-                                
-                                </form>
-                              </div>
-                            </div>
-                          </div>
-                        
-            </div>
+                   <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary btn-lg center" data-toggle="modal" data-target="#myModal">
+                  Create An Ad!
+                </button>
         </div>
     </section>
 
@@ -277,6 +219,64 @@ require_once "bat_login.php";
       </div>
     </div>
     <!-- END LOGIN MODAL -->
+
+    <!-- MAKE AD MODAL -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Create Ad</h4>
+          </div>
+        <div class="modal-body">
+          <form method="POST" action="htmltest2.php" enctype="multipart/form-data">                     
+            <div class="adCreate form-group">
+                <label for="item_name"></label>
+                <input type="text" name="item_name" class="form-control" id="item_name" placeholder="Item Name">
+            </div>
+            <div class="adCreate form-group input-group">
+              <label for="price"></label>
+              <span class="input-group-addon">$</span>
+              <input type="number" name="price"class="form-control" aria-label="Amount (to the nearest dollar)">
+              <span class="input-group-addon">.00</span>
+            </div>
+            <div class="adCreate form-group">
+                <label for="used_against"></label>
+                <input type="text" name="used_against" class="form-control" id="used_against" placeholder="Used Against">
+            </div>
+            <div class="adCreate form-group">
+                <label for="bat_condition"></label>
+                <input type="text" name="bat_condition" class="form-control" id="bat_condition" placeholder="Condition">
+            </div>
+            <div class="adCreate form-group">
+                <label for="generation"></label>
+                <input type="text" name="generation" class="form-control" id="generation" placeholder="Generation">
+            </div>
+            <div class="adCreate form-group">
+                <label>Upload Image</label>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <span class=" btn btn-default btn-file">
+                            Browse <input type="file" name="data" id="data">
+                        </span>
+                    </span>
+                    <input type="text" id="filefill" class="form-control" readonly />
+                </div>
+            </div>
+            <div class="adCreate form-group center">
+                <label for="description"></label>
+                <input type="text" name="description" class="form-control" id="description" placeholder="Description">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-warning">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- END MAKE AD MODAL -->
     <footer>
         <div class="container text-center">
             <p>Copyright &copy; Batlist 2015</p>

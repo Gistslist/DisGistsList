@@ -9,9 +9,6 @@ $(document).ready(function(){
   });
 });
 
-$(document).ready(function(){
-  $('.bxslider').bxSlider();
-});
 
 var angle = 0;
 function galleryspin(sign) {

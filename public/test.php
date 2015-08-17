@@ -29,9 +29,45 @@ require_once 'ad.show.php';
 <body>
  	<ul class="bxslider">
             <?php foreach ($items as $item): ?>
-                <li><img src="<?= $item['image'] ?>" title="<?= $item['item_name'] ?>" id="<?= $item['id'] ?>" /></li>
+                <li><img src="<?= $item['image'] ?>" /></li>
             <? endforeach ?>
-            </ul>
+    </ul>
+
+    <ul class="bxslider">
+    <?php foreach ($items as $item): ?>
+        <li><a href="#imageModal<?= $item['id'] ?>" data-target="#imageModal" data-toggle="modal"><img src="<?= $item['image'] ?>"/></li>
+    <? endforeach ?>
+    </ul>
+
+
+<? foreach ($items as $item): ?>
+
+<!-- Modal -->
+<div class="modal fade" id="imageModal<?= $item['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+        <div class="modal-title" id="myModalLabel"><img src="<?= $item['image'] ?>" width="100%"></div>
+      </div>
+      <div class="modal-body">
+        <h3><?= $item['item_name'] ?></h3>
+        <p><?= $item['description'] ?></p>
+        
+
+      </div>
+      <div class="modal-footer">
+         <p> Price: $<?= $item['price'] ?> </p>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Buy</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<? endforeach ?>
     	
     
 </body>

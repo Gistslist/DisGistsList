@@ -17,8 +17,8 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 if(Input::has('item_name')){
     if($_FILES) {
         $uploads_directory = 'img/uploads/';
-        $filename = $uploads_directory . basename($_FILES['image']['name']);
-        if (move_uploaded_file($_FILES['image']['tmp_name'], $filename)) {
+        $filename = $uploads_directory . basename($_FILES['images']['name']);
+        if (move_uploaded_file($_FILES['images']['tmp_name'], $filename)) {
             // echo '<p>The file '. basename( $_FILES['image']['name']). ' has been uploaded.</p>';
         } else {
             //alert("Sorry, there was an error uploading your file.");
