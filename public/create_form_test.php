@@ -30,25 +30,39 @@ if(Input::has('item_name')){
         if (move_uploaded_file($_FILES['image']['tmp_name'], $filename)) {
             // echo '<p>The file '. basename( $_FILES['image']['name']). ' has been uploaded.</p>';
         } else {
-            alert("Sorry, there was an error uploading your file.");
+            //alert("Sorry, there was an error uploading your file.");
         }
+<<<<<<< HEAD
     
   
+=======
+
+>>>>>>> 5043e1fd35b0e94b16f16af2084853e1c7a8314e
     $item_name = Input::getString('item_name');
     $price = Input::get('price');
     $used_against = Input::getString('used_against');
     $bat_condition = Input::getString('bat_condition');
     $generation = Input::get('generation');
     $description = Input::getString('description');
+<<<<<<< HEAD
     
+=======
+    $user_id = 1;
+>>>>>>> 5043e1fd35b0e94b16f16af2084853e1c7a8314e
 
-   
+
+
 
     $insertQuery = "INSERT INTO ad_list (item_name, price, description, used_against, bat_condition, generation, image, user_id)
             VALUES (:item_name, :price, :description, :used_against, :bat_condition, :generation, :image, :user_id)";
     $stmt=$dbc->prepare($insertQuery);
+<<<<<<< HEAD
     
     $idGrab = $userVerify['0']['user_id'];
+=======
+
+
+>>>>>>> 5043e1fd35b0e94b16f16af2084853e1c7a8314e
 
     $stmt->bindValue(':item_name', $item_name, PDO::PARAM_STR);
     $stmt->bindValue(':price', $price, PDO::PARAM_STR);
@@ -60,13 +74,13 @@ if(Input::has('item_name')){
     $stmt->bindValue(':user_id', $userVerify, PDO::PARAM_STR);
 
     $stmt->execute();
-      
-      
-    
-    
 
-      
-   
+
+
+
+
+
+
 }else{
     $errorMessage = "Please fill out all fields to add an item.";
     $exceptionError = "input item_name";
