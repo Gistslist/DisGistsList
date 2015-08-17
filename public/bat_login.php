@@ -35,21 +35,19 @@ if (isset($_SESSION['LOGGED_IN_USER'])){
 	if ($_SESSION['LOGGED_IN_USER']){
 		$_SESSION['loginmessage'] = '';
 		$_SESSION['logoutmessage'] = 'Log Out';
-<<<<<<< HEAD
+
 	} 
 } else {
 	$_SESSION['loginmessage'] = 'Log In';
 	$_SESSION['logoutmessage'] = '';
 	$_SESSION['USERNAME'] = 'Batschelet';
-=======
+
 	}
->>>>>>> 676bd36583c574aa38e74a19b5839339fe8beee0
-}
+// }
 
 
 ?>
-<<<<<<< HEAD
-=======
+
 <html>
 <head>
 	<title>Login</title>
@@ -58,7 +56,7 @@ if (isset($_SESSION['LOGGED_IN_USER'])){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-		<!---Stylize--->
+		<!---Stylize-->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="/css/main.css">
@@ -106,4 +104,3 @@ if (isset($_SESSION['LOGGED_IN_USER'])){
 
 </body>
 </html>
->>>>>>> 676bd36583c574aa38e74a19b5839339fe8beee0
