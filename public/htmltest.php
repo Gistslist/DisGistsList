@@ -1,9 +1,13 @@
 <?php
-// require_once "ad.show.php";
+
+
+require_once "ad.show.php";
+require_once "users.create.php";
 require_once "create_form_test.php";
 
 
 ?>
+
 <html>
 <head>
     <title>Batlist</title>
@@ -66,7 +70,7 @@ require_once "create_form_test.php";
                         <a class="page-scroll" href="#post_ad">List your Bat Ad</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#signup">Sign Up</a>
+                        <a href="#" data-toggle="modal" data-target="#registerModal">Sign Up</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#login">Log In</a>
@@ -99,16 +103,23 @@ require_once "create_form_test.php";
         <div class="container">
             <ul class="bxslider">
             <?php foreach ($items as $item): ?>
+<<<<<<< HEAD
+                <li><img src="<?= $item['image'] ?>" title="<?= $item['item_name'] ?>" id="<?= $item['id'] ?>" /></li>
+                <li><img src="<?= $item['image'] ?>" id="<?= $item['id'] ?>" /></li>
+=======
 
                 <li><img src="<?= $item['image'] ?>" title="<?= $item['item_name'] ?>" id="<?= $item['id'] ?>" /></li>
 
                 <li><img src="<?= $item['image'] ?>" id="<?= $item['id'] ?>" /></li>
 
+>>>>>>> eb70c9a2dab702020d2f86ea2a08a2aa0ca31f0a
             <? endforeach ?>
             </ul>
         </div>
     </section>
 
+
+    <!-- POST AD SECTION -->
     <section id="post_ad" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
@@ -141,10 +152,6 @@ require_once "create_form_test.php";
                                         <input type="number" name="price"class="form-control" aria-label="Amount (to the nearest dollar)">
                                         <span class="input-group-addon">.00</span>
                                       </div>
-                                      <!-- <div class="adCreate form-group">
-                                          <label for="price"></label>
-                                          <input type="number" name="price" class="form-control" id="price" placeholder="Price">
-                                      </div> -->
                                       <div class="adCreate form-group">
                                           <label for="used_against"></label>
                                           <input type="text" name="used_against" class="form-control" id="used_against" placeholder="Used Against">
@@ -168,29 +175,22 @@ require_once "create_form_test.php";
                                           <input type="text" name="description" class="form-control" id="description" placeholder="Description">
                                       </div>
 
-                                     <!--  <div>
-                                        <label for="description"></label>
-                                          <textarea  type="text" id="description" name="description" placeholder="description" rows="5" cols="40"
-                                          ></textarea>
-                                      </div> -->
                                       <button type="submit" class="adCreate btn-submit btn-default">Submit</button>
                                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                     </div>
                                     <div class="modal-footer">
-                                <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+                                
                                 </form>
                               </div>
                             </div>
                           </div>
-                        <!-- </div> -->
+                        
             </div>
         </div>
     </section>
 
-    <!-- <section>experience</section>
-    <section>thoughts</section> -->
 
-    <!-- <section id="about" class="container content-section text-center">
+    <section id="about" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Contact Me</h2>
@@ -207,7 +207,49 @@ require_once "create_form_test.php";
                 </ul>
             </div>
         </div>
-    </section> -->
+    </section>
+
+    <!-- REGISTER MODAL -->
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="registerModalLabel">Please create a new alter ego</h4>
+          </div>
+          <div class="modal-body">
+            <form method="POST" action="htmltest.php">
+                  <div class="userCreate form-group">
+                      <label for="first_name"></label>
+                      <input type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name">
+                  </div>
+                  <div class="userCreate form-group">
+                      <label for="last_name"></label>
+                      <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Last Name">
+                  </div>
+                  <div class="userCreate form-group">
+                      <label for="user_name"></label>
+                      <input type="text" name="user_name" class="form-control" id="user_name" placeholder="Username">
+                  </div>
+                  <div class="userCreate form-group">
+                      <label for="password"></label>
+                      <input type="text" name="password" class="form-control" id="password" placeholder="Password">
+                  </div>
+                  <div class="userCreate form-group">
+                      <label for="email"></label>
+                      <input type="text" name="email" class="form-control" id="email" placeholder="Email">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-warning">Submit</button>
+                  </div>
+                  
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END REGISTER MODAL -->
 
     <footer>
         <div class="container text-center">

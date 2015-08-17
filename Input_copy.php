@@ -50,21 +50,6 @@ class Input
         return $value;
     }
 
-    public static function getDate($key)
-    {
-        $value = static::get($key);
-        $format = 'Y-m-d';
-
-        $date = DateTime:: createFromFormat($format, $value);
-
-        if($dateObject){
-
-            return $dateObject->date;
-        }else{
-            throw new Exception('this must be a valid date');
-        }
-    }
-
     /**
      * Get a requested value from either $_POST or $_GET
      *
