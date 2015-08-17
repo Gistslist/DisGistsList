@@ -23,7 +23,7 @@ require_once "bat_login.php";
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/css/grayscale.css">
-    <!-- <link rel="stylesheet" type="text/css" href="/css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="/css/test.css">
     <!-- bxSlider CSS file -->
     <link rel="stylesheet" href="/css/jquery.bxslider.css">
 
@@ -38,7 +38,7 @@ require_once "bat_login.php";
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="js/grayscale.js"></script>
     <script src="/js/jquery.bxslider.min.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="/js/test.js"></script>
 
 </head>
 
@@ -107,14 +107,23 @@ require_once "bat_login.php";
     
 
     <section id="browse" class="container content-section">
-        <div class="container">
-            <ul class="bxslider">
-            <?php foreach ($items as $item): ?>
-                <li><img src="<?= $item['image'] ?>" /></li>
-                <li><img src="<?= $item['image'] ?>" /></li>
-            <? endforeach ?>
-            </ul>
+        <div id="carousel">
+          <figure id="spinner">
+          <?php foreach ($items as $item): ?>
+            <img src="<?= $item['image'] ?>">              
+          <? endforeach ?>  
+          <img src=//demosthenes.info/assets/images/wanaka-tree.jpg alt="">
+          <img src=//demosthenes.info/assets/images/still-lake.jpg alt="">
+          <img src=//demosthenes.info/assets/images/pink-milford-sound.jpg alt="">
+          <img src=//demosthenes.info/assets/images/paradise.jpg alt="">
+          <img src=//demosthenes.info/assets/images/morekai.jpg alt="">
+          <img src=//demosthenes.info/assets/images/milky-blue-lagoon.jpg alt="">
+          <img src=//demosthenes.info/assets/images/lake-tekapo.jpg alt="">
+          <img src=//demosthenes.info/assets/images/milford-sound.jpg alt="">
+          </figure>
         </div>
+          <span style=float:left class=ss-icon onclick="galleryspin('-')">&lt;</span>
+          <span style=float:right class=ss-icon onclick="galleryspin('')">&gt;</span>
     </section>
 
 
