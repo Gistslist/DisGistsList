@@ -9,12 +9,16 @@ require_once 'bat_login.php';
 $query = ("SELECT * FROM ad_list");
 $stmt = $dbc->prepare($query);
 $stmt->execute();
-if(isset($_SESSION['USERNAME'])){
-    $setUser = $_SESSION['USERNAME'];
-    $userQuery = ("SELECT user_id FROM bat_user WHERE user_name = '$setUser'");
-    $idStmt = $dbc->prepare($query);
-    $idStmt->execute();
-    $userVerify = $idStmt->fetchAll(PDO::FETCH_ASSOC);
+
+if(isset($_SESSION['LOGGED_IN_USER'])){
+    if($_SESSION['LOGGED_IN_USER']){
+        $setUser = $_SESSION['USERNAME'];
+        $userQuery = ("SELECT user_id FROM bat_user WHERE user_name = '$setUser'");
+        $idStmt = $dbc->prepare($userQuery);
+        $idStmt->execute();
+        $userVerify = $idStmt->fetchAll(PDO::FETCH_ASSOC);
+    // var_dump($userVerify);
+    }
 }
 //bind
 
@@ -41,7 +45,7 @@ if(Input::has('item_name')){
     $bat_condition = Input::getString('bat_condition');
     $generation = Input::get('generation');
     $description = Input::getString('description');
-
+    // $user_id = 1;
 
 
 
@@ -61,7 +65,7 @@ if(Input::has('item_name')){
     $stmt->bindValue(':generation', $generation, PDO::PARAM_STR);
     $stmt->bindValue(':description', $description, PDO::PARAM_STR);
     $stmt->bindValue(':image', $filename, PDO::PARAM_STR);
-    $stmt->bindValue(':user_id', $userVerify, PDO::PARAM_STR);
+    $stmt->bindValue(':user_id', $idGrab, PDO::PARAM_STR);
 
     $stmt->execute();
 
