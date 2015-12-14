@@ -17,7 +17,7 @@ if(isset($_SESSION['LOGGED_IN_USER'])){
         $idStmt = $dbc->prepare($userQuery);
         $idStmt->execute();
         $userVerify = $idStmt->fetchAll(PDO::FETCH_ASSOC);
-    // var_dump($userVerify);
+    var_dump($userVerify);
     }
 }
 //bind

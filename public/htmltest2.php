@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once "ad.show.php";
+// require_once "ad.show.php";
 require_once "users.create.php";
 require_once "create_form_test.php";
 require_once "bat_login.php";
