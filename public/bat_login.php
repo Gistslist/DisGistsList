@@ -6,7 +6,7 @@ require_once '../Input_copy.php';
 
 $_SESSION['loginmessage'] = 'Log In';
 $_SESSION['logoutmessage'] = '';
-$_SESSION['USERNAME'] = 'Batschelet';
+$_SESSION['USERNAME'] = 'batman';
 
 
 $username = Input::get('login_user_name');
@@ -14,7 +14,7 @@ $password = Input::get('login_password');
 // var_dump($username);
 // var_dump($password); 
 
-if (!empty($_REQUEST)){
+if (!empty($_REQUEST) && !isset($_SESSION['LOGGED_IN_USER'])){
 
 	$checkuserstmt = $dbc->prepare("SELECT password FROM bat_user WHERE user_name = '$username'");
 	$checkuserstmt->execute();

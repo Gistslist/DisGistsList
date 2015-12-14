@@ -1,6 +1,6 @@
 <?php
 
-require_once 'ad.show.php';
+// require_once 'ad.show.php';
 
 
 ?>

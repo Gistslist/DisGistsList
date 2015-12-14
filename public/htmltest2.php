@@ -1,10 +1,11 @@
 <?php
 session_start();
 
-require_once "ad.show.php";
+// require_once "ad.show.php";
 require_once "users.create.php";
 require_once "create_form_test.php";
 require_once "bat_login.php";
+
 // require_once "bat_logout.php";
 
 
@@ -24,6 +25,7 @@ require_once "bat_login.php";
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/css/grayscale.css">
     <link rel="stylesheet" type="text/css" href="/css/test.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
     <!-- bxSlider CSS file -->
     <link rel="stylesheet" href="/css/jquery.bxslider.css">
 
@@ -42,7 +44,9 @@ require_once "bat_login.php";
 
 </head>
 
-<bodyid="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<bodyid ="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+
 
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
@@ -112,7 +116,7 @@ require_once "bat_login.php";
                     
                 <?php foreach ($items as $item): ?>
 
-                    <!-- <div role="button" data-toggle="modal" data-target="#myModal<?= $item['id'] ?>"> -->
+                    <!--    <div role="button" data-toggle="modal" data-target="#myModal<?= $item['id'] ?>"> -->
 
                         <img src="<?= $item['image'] ?>" role="button" data-toggle="modal" data-target="#myModal<?= $item['id'] ?>">
 
@@ -260,7 +264,7 @@ require_once "bat_login.php";
                   </div>
                   <div class="userCreate form-group">
                       <label for="email"></label>
-                      <input type="text" name="email" class="form-control" id="email" placeholder="Email">
+                      <input type="email" name="email" class="form-control" id="email" placeholder="Email">
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
